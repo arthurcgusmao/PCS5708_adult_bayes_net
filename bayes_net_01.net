@@ -1,8 +1,9 @@
 net
 {
-	propagationenginegenerator1791944048146838126L = "edu.ucla.belief.approx.BeliefPropagationSettings@36dd3a5b";
+	propagationenginegenerator1791944048146838126L = "edu.ucla.belief.approx.BeliefPropagationSettings@56c5c4ef";
 	recoveryenginegenerator6944530267470113528l = "edu.ucla.util.SettingsImpl@2f791ea4";
 	node_size = (130.0 55.0);
+	rcenginegenerator1317510038576835557L = "edu.ucla.belief.inference.RCSettings@3a5cb8bd";
 }
 
 node label
