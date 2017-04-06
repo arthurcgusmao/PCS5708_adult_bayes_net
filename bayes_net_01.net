@@ -1,23 +1,11 @@
 net
 {
-	propagationenginegenerator1791944048146838126L = "edu.ucla.belief.approx.BeliefPropagationSettings@56c5c4ef";
+	propagationenginegenerator1791944048146838126L = "edu.ucla.belief.approx.BeliefPropagationSettings@62ae0a2d";
 	recoveryenginegenerator6944530267470113528l = "edu.ucla.util.SettingsImpl@2f791ea4";
 	node_size = (130.0 55.0);
 	rcenginegenerator1317510038576835557L = "edu.ucla.belief.inference.RCSettings@3a5cb8bd";
 }
 
-node label
-{
-	states = ("state0" "state1" );
-	position = (177 -268);
-	diagnosistype = "AUXILIARY";
-	DSLxSUBMODEL = "Root Submodel";
-	ismapvariable = "false";
-	ID = "variable2";
-	label = "label";
-	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
-	excludepolicy = "include whole CPT";
-}
 node workclass
 {
 	states = ("state0" "state1" );
@@ -39,6 +27,18 @@ node age
 	ismapvariable = "false";
 	ID = "variable0";
 	label = "age";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node sex
+{
+	states = ("state0" "state1" );
+	position = (329 -174);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable5";
+	label = "sex";
 	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
 	excludepolicy = "include whole CPT";
 }
@@ -66,17 +66,37 @@ node occupation
 	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
 	excludepolicy = "include whole CPT";
 }
-node sex
+node label
 {
 	states = ("state0" "state1" );
-	position = (329 -174);
+	position = (177 -268);
 	diagnosistype = "AUXILIARY";
 	DSLxSUBMODEL = "Root Submodel";
 	ismapvariable = "false";
-	ID = "variable5";
-	label = "sex";
+	ID = "variable2";
+	label = "label";
 	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
 	excludepolicy = "include whole CPT";
+}
+potential ( workclass | )
+{
+	data = (	0.8321000000000001	0.1679	);
+}
+potential ( age | )
+{
+	data = (	0.23250000000000004	0.7675	);
+}
+potential ( sex | )
+{
+	data = (	0.3308	0.6692	);
+}
+potential ( education_num | )
+{
+	data = (	0.45311999999999997	0.54688	);
+}
+potential ( occupation | )
+{
+	data = (	0.6996	0.3004	);
 }
 potential ( label | age workclass education_num occupation sex )
 {
@@ -112,24 +132,4 @@ potential ( label | age workclass education_num occupation sex )
 		(	0.5	0.5	))
 		((	0.5	0.5	)
 		(	0.2	0.8	))))));
-}
-potential ( workclass | )
-{
-	data = (	0.8321000000000001	0.1679	);
-}
-potential ( age | )
-{
-	data = (	0.23250000000000004	0.7675	);
-}
-potential ( education_num | )
-{
-	data = (	0.45311999999999997	0.54688	);
-}
-potential ( occupation | )
-{
-	data = (	0.6996	0.3004	);
-}
-potential ( sex | )
-{
-	data = (	0.3308	0.6692	);
 }
